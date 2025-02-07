@@ -10,8 +10,8 @@ public class Main {
         while (savings < 2_459_000) {
             savings += 15_000;
             month += 1;
+            System.out.println("Месяц " + month + " сумма накоплений равна " + savings + " рублей");
         }
-        System.out.println("Месяц " + month + " сумма накоплений равна " + savings + " рублей");
 
 //        ----- =====   Задание № 2   ===== -----
 
@@ -74,13 +74,15 @@ public class Main {
         System.out.println();
         System.out.println("----- =====   Задание № 6   ===== -----");
         bank = 15_000;
-        for (int j = 1; j <= 9 * 12; j++) {
-            bank *= 1.07;
+        float bid = 1.07f;
+        int term = 9;
+        for (int j = 1; j <= term * 12; j++) {
+            bank *= bid;
             if (j % 6 == 0) {
                 System.out.println("Месяц " + j + " сумма накоплений " + bank);
             }
         }
-        System.out.println("Через 9 лет у Вас получится " + bank + " рублей");
+        System.out.println("Через " + term + " лет у Вас получится " + bank + " рублей");
 
 //        ----- =====   Задание № 7   ===== -----
 
@@ -99,7 +101,7 @@ public class Main {
         year = 2025;
         int lastYear = year - 200;
         int nextYear = year + 100;
-        for (int j = 0; j < nextYear; j += 79) {
+        for (int j = 0; j <= nextYear; j += 79) {
             if (j > lastYear && j <= year) {
                 System.out.println("Комета пролетала в " + j + " году");
             } else if (j < nextYear && j > year) {
